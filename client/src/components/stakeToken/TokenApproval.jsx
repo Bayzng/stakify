@@ -8,7 +8,6 @@ import toast from "react-hot-toast"
 const TokenApproval = () => {
   const { stakeTokenContract, stakingContract } = useContext(Web3Context);
   const approveTokenRef = useRef();
-//   const [transactionStatus, setTransactionStatus] = useState("");
   const approveToken = async (e) => {
     e.preventDefault();
     const amount = approveTokenRef.current.value.trim();
@@ -29,20 +28,7 @@ const TokenApproval = () => {
         success: "Approved",
         error: "Transaction failed",
     })
-      // console.log(transaction)
-    //   setTransactionStatus("Transaction is in pending...");
     approveTokenRef.current.value
-
-    //   const receipt = await transaction.wait();
-    //   if (receipt.status === 1) {
-    //     setTransactionStatus("Transaction is succesful");
-    //     setTimeout(() => {
-    //       setTransactionStatus("");
-    //     }, 5000);
-    //     approveTokenRef.current.value = "";
-    //   } else {
-    //     setTransactionStatus("Transaction failed");
-    //   }
     } catch (error) {
       console.error("Token Approval failed", error.message);
     }

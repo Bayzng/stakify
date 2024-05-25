@@ -3,8 +3,9 @@ import { createContext, useState } from "react";
 const StakingContext = createContext();
 
 
+
 export const StakingProvider = ({children}) => {
-    const [isReload, setIsReload] = useState(false);
+    const [isReload, setIsReload] = useState(null);
 
     return(
         <StakingContext.Provider value={{isReload, setIsReload}}>
